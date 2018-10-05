@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company_stock.name %>
+</p>
+
+<p>
+  <strong>Sharecode:</strong>
+  <%= @company_stock.sharecode %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @company_stock.strt_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @company_stock.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_company_stock_path(@company_stock) %> |
+<%= link_to 'Back', company_stocks_path %>

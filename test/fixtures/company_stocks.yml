@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sharecode: 1
+  strt_date: 2018-10-04
+  end_date: 2018-10-04
+
+two:
+  name: MyString
+  sharecode: 1
+  strt_date: 2018-10-04
+  end_date: 2018-10-04

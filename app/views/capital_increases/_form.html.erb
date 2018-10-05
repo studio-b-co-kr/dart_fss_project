@@ -1,0 +1,57 @@
+<%= form_with(model: capital_increase, local: true) do |form| %>
+  <% if capital_increase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(capital_increase.errors.count, "error") %> prohibited this capital_increase from being saved:</h2>
+
+      <ul>
+      <% capital_increase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :total_number_of_new_issue_stocks %>
+    <%= form.number_field :total_number_of_new_issue_stocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :face_value_of_original_issue_stocks %>
+    <%= form.number_field :face_value_of_original_issue_stocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_of_new_issue_stocks %>
+    <%= form.number_field :price_of_new_issue_stocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_amount_raised_from_new_issue_stocks %>
+    <%= form.number_field :total_amount_raised_from_new_issue_stocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_new_issue_stocks_per_original_stock %>
+    <%= form.number_field :number_of_new_issue_stocks_per_original_stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completion_date_for_new_stock_registration %>
+    <%= form.date_select :completion_date_for_new_stock_registration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estimated_date_for_new_stock_transfer %>
+    <%= form.date_select :estimated_date_for_new_stock_transfer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estimated_date_for_public_offering_for_new_stock %>
+    <%= form.date_select :estimated_date_for_public_offering_for_new_stock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
