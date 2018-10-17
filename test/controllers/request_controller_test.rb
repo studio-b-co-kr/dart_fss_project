@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CapitalIncreaseTest < ActiveSupport::TestCase
+class RequestControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

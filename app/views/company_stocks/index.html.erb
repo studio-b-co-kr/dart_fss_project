@@ -7,22 +7,27 @@
     <tr>
       <th>Name</th>
       <th>Sharecode</th>
-      <th>Strt date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @company_stocks.each do |company_stock| %>
-      <tr>
-        <td><%= company_stock.name %></td>
-        <td><%= company_stock.sharecode %></td>
-        <td><%= company_stock.strt_date %></td>
-        <td><%= company_stock.end_date %></td>
-        <td><%= link_to 'Show', company_stock %></td>
-        <td><%= link_to 'Edit', edit_company_stock_path(company_stock) %></td>
-        <td><%= link_to 'Destroy', company_stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td class="name"><%= company_stock.name %></td>
+        <td class="sharecode"><%= company_stock.sharecode %></td>
+        <td class="actions">
+          <ul>
+            <li><%= link_to 'Show', company_stock %></li>
+            <li><%= link_to 'Edit', edit_company_stock_path(company_stock) %></li>
+            <li>
+              <%= link_to 'Destroy',
+                           company_stock,
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+            </li>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,7 @@
 
 <br>
 
-<%= link_to 'New Company Stock', new_company_stock_path %>
+<%= link_to 'Search More', new_company_stock_path %>
+
+
+

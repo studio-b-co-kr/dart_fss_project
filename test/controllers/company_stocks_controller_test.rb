@@ -17,7 +17,7 @@ class CompanyStocksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create company_stock" do
     assert_difference('CompanyStock.count') do
-      post company_stocks_url, params: { company_stock: { end_date: @company_stock.end_date, name: @company_stock.name, sharecode: @company_stock.sharecode, strt_date: @company_stock.strt_date } }
+      post company_stocks_url, params: { company_stock: { name: @company_stock.name, sharecode: @company_stock.sharecode } }
     end
 
     assert_redirected_to company_stock_url(CompanyStock.last)
@@ -34,7 +34,7 @@ class CompanyStocksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update company_stock" do
-    patch company_stock_url(@company_stock), params: { company_stock: { end_date: @company_stock.end_date, name: @company_stock.name, sharecode: @company_stock.sharecode, strt_date: @company_stock.strt_date } }
+    patch company_stock_url(@company_stock), params: { company_stock: { name: @company_stock.name, sharecode: @company_stock.sharecode } }
     assert_redirected_to company_stock_url(@company_stock)
   end
 
