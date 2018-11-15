@@ -1,6 +1,11 @@
 // Place all the styles related to the CompanyStocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main_table th{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .company_stocks {
   margin: 20px;
   padding: 0.5em;
@@ -9,6 +14,7 @@
     border-radius: 0.354em;
   }
   table {
+    margin-top: 50px;
     border-collapse: collapse;
   }
   td {

@@ -1,27 +1,20 @@
-<%= form_with(model: company_stock, local: true) do |form| %>
-  <% if company_stock.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company_stock.errors.count, "error") %> prohibited this company_stock from being saved:</h2>
+<%= simple_form_for @company_stock do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% company_stock.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :name %>
+  <%= f.input :sharecode %>
+  <%= f.input :end_date %>
+  <%= f.input :new_stock_issuance_ratio %>
+  <%= f.input :current_stock_amount %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sharecode %>
-    <%= form.number_field :sharecode %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Search" %>
-  </div>
+  <%= f.button :submit, class: "btn-primary" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
 <% end %>
+
+
+<!--
+필요한 정보:
+권리락일 (end date)
+신주배정비율 (new stock issuance ratio)
+현재 보유주식수 (current stock amount)
+ -->
