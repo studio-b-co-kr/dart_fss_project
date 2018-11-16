@@ -26,6 +26,9 @@
   # POST /company_stocks.json
   def create
     @company_stock = CompanyStock.new(company_stock_params)
+    @company_stock.NewTotalStocks = company_stock_params[:new_stock_issuance_ratio].to_f *
+    company_stock_params[:current_stock_amount].to_f +
+    company_stock_params[:current_stock_amount].to_f
 
     respond_to do |format|
       if @company_stock.save
@@ -70,6 +73,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_stock_params
-      params.require(:company_stock).permit(:name, :sharecode, :strt_date, :end_date)
+      params.require(:company_stock).permit(:name, :sharecode, :EndDate, :new_stock_issuance_ratio, :current_stock_amount)
     end
 end

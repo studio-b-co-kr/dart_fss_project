@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_094221) do
+ActiveRecord::Schema.define(version: 2018_11_16_094225) do
 
   create_table "company_stocks", force: :cascade do |t|
     t.string "name"
     t.integer "sharecode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "end_date"
     t.float "new_stock_issuance_ratio"
     t.integer "current_stock_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "EndDate"
+    t.integer "NewTotalStocks"
   end
 
 end

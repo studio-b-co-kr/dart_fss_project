@@ -21,11 +21,11 @@
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td class="name"><%= company_stock.name %></td>
         <td class="sharecode"><%= company_stock.sharecode %></td>
-        <td><%= company_stock.end_date %></td>
+        <td><%= company_stock.EndDate %></td>
         <td><%= company_stock.new_stock_issuance_ratio %></td>
         <td><%= company_stock.current_stock_amount %></td>
-        <td></td>
-        <td><%= button_to '유상증자 계산' %></td>
+        <td><%= company_stock.NewTotalStocks %></td>
+        <td><%= button_to 'B.Bridge 보내기'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +33,7 @@
 
 <br>
 
-<%= link_to 'Search More', new_company_stock_path %>
+<%= link_to '회사 검색', new_company_stock_path %>
 
 
 

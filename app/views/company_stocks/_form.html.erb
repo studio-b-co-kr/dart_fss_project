@@ -1,11 +1,11 @@
 <%= simple_form_for @company_stock do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
-  <%= f.input :sharecode %>
-  <%= f.input :end_date %>
-  <%= f.input :new_stock_issuance_ratio %>
-  <%= f.input :current_stock_amount %>
+  <%= f.input :name, label: '회사명' %>
+  <%= f.input :sharecode, label: '코드' %>
+  <%= f.input :EndDate, label: '권리락일' %>
+  <%= f.input :new_stock_issuance_ratio, label: '신주배정비율' %>
+  <%= f.input :current_stock_amount, label: '현재 보유주식수' %>
 
   <%= f.button :submit, class: "btn-primary" %>
   <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
@@ -17,4 +17,5 @@
 권리락일 (end date)
 신주배정비율 (new stock issuance ratio)
 현재 보유주식수 (current stock amount)
+신규 주식수 (new total stocks)
  -->
